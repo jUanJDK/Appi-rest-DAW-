@@ -1,0 +1,25 @@
+-- Crear la base de datos si no existe
+CREATE DATABASE IF NOT EXISTS db_curso_app;
+
+-- Usar la base de datos
+USE db_curso_app;
+
+-- Crear la tabla persona
+CREATE TABLE IF NOT EXISTS persona (
+    idpersona SERIAL PRIMARY KEY,
+    cedula VARCHAR(20) NOT NULL,
+    nombres VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    telefono VARCHAR(50) NOT NULL,
+    direccion VARCHAR(50) NOT NULL
+);
+
+-- Mostrar las tablas para verificar
+SHOW TABLES;
+
+-- Insertar algunos registros de ejemplo
+INSERT INTO persona (cedula, nombres, apellidos, fecha_nacimiento, telefono, direccion)
+VALUES
+('1234567890', 'Juan', 'Pérez', '1980-01-01', '555-1234', 'Calle L123'),
+('0987654321', 'María', 'Gómez', '1990-02-02', '555-5678', 'Avenida Siempre Viva 456');
